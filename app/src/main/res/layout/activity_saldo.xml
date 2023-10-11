@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SaldoActivity">
+
+    <!-- Amount Text (with Eye Icon) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/amountLayout"
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="348dp"
+        app:cardCornerRadius="16dp"
+    android:layout_gravity="center"
+    android:elevation="4dp"
+    app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1F2535">
+
+        <!-- Isi tampilan di dalam CardView di sini -->
+
+        <TextView
+            android:id="@+id/titlebank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TWOBANK"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:textSize="34sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo anda"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/white"
+
+            app:layout_constraintTop_toBottomOf="@+id/titlebank"
+            />
+
+        <LinearLayout
+            android:id="@+id/amountContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/saldo">
+
+            <EditText
+                android:id="@+id/amountEditText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:text="Rp. 999.999"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/eyeIcon"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart="0dp"
+                android:clickable="true"
+                android:contentDescription="tes"
+                android:focusable="true"
+                android:src="@drawable/ic_eye" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/userText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="8dp"
+            android:text="User"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/userInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/saldo"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/norek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="91213212312"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/userInfoIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="118dp"
+                android:src="@drawable/card"
+                android:contentDescription="User Info" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+    <!-- BottomNavigationView -->
+<com.google.android.material.bottomnavigation.BottomNavigationView
+android:id="@+id/bottom_navigation"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_gravity="bottom"
+app:menu="@menu/bottom_navigation_menu"
+app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
